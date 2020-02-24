@@ -6,6 +6,7 @@ def utils = new jenkinsfileUtil(steps, this)
 
   node {
     stage('Preparation') {
+      step([$class: 'WsCleanup'])
       //utils.notifyByMail('START', recipients)
       checkout scm
       //utils.prepare()
