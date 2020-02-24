@@ -6,7 +6,7 @@ def utils = new jenkinsfileUtil(steps, this)
 
   node {
     stage('Preparation') {
-      sh "source /home/jenkins/.profile"
+
       step([$class: 'WsCleanup'])
       //utils.notifyByMail('START', recipients)
       checkout scm
