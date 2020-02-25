@@ -18,6 +18,10 @@ def utils = new jenkinsfileUtil(steps, this)
     stage('Build & U.Test') { utils.buildMaven()
  }
 
+        stage('Deploy') { utils.deployMaven()
+ }
+
+    
 }
 
 
