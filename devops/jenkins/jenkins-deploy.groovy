@@ -8,17 +8,13 @@ def utils = new jenkinsfileUtil(steps, this)
     stage('Preparation') {
 
       step([$class: 'WsCleanup'])
-      //utils.notifyByMail('START', recipients)
       checkout scm
-      //utils.prepare()
-      //Setup parameters
-     // env.project = "${project}"
     }
     
     stage('Build & U.Test') { utils.buildMaven()
  }
 
-        stage('Deploy') { utils.deployMaven()
+     // stage('Deploy') { utils.deployMaven()
  }
 
     
