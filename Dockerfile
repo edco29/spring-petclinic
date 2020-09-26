@@ -1,4 +1,5 @@
-FROM openjdk:8
-COPY ./target/*.jar  /usr/src/myapp/
+FROM maven:3.6.3-adoptopenjdk-8
+COPY . /usr/src/myapp/
+RUN ./mvnw package
 WORKDIR /usr/src/myapp/
-ENTRYPOINT java -jar *.jar
+ENTRYPOINT java -jar ./target/*.jar
